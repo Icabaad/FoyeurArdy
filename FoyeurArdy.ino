@@ -110,16 +110,16 @@ void loop() {
   
   char Buffer2[80];
 
-  dtostrf(lightValue, 4, 2, Buffer);//
+  dtostrf(lightValue, 5, 2, Buffer);
 strcpy(Buffer2, Buffer);
 strcat(Buffer2, ","); 
-strcat(Buffer2, dtostrf(hotTMP, 4, 2, Buffer)); 
+strcat(Buffer2, dtostrf(hotTMP, 5, 2, Buffer)); 
 strcat(Buffer2, ","); 
-strcat(Buffer2, dtostrf(coldTMP, 4, 2, Buffer)); 
+strcat(Buffer2, dtostrf(coldTMP, 5, 2, Buffer)); 
 strcat(Buffer2, ","); 
-strcat(Buffer2, dtostrf(humidity, 4, 2, Buffer)); 
+strcat(Buffer2, dtostrf(humidity, 5, 2, Buffer)); 
 strcat(Buffer2, ","); 
-strcat(Buffer2, dtostrf(dhTemp, 4, 2, Buffer)); 
+strcat(Buffer2, dtostrf(dhTemp, 5, 2, Buffer)); 
 strcat(Buffer2, ","); 
 strcat(Buffer2, dtostrf(commsMotion, 1, 0, Buffer)); 
 strcat(Buffer2, "\r"); 
