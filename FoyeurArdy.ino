@@ -27,6 +27,7 @@ int motionPin = 2; // choose the input pin (for PIR sensor)
 float rawRange = 1024; // 3.3v
 float logRange = 5.0; // 3.3v = 10^5 lux
 int commsMotion = 0;
+long previousMillis = 0;
 
 void setup() {
   analogReference(EXTERNAL); //
@@ -41,7 +42,8 @@ void setup() {
 }
 
 void loop() {
-
+  unsigned long currentMillis = millis();
+  if(currentMillis - previousMillis > 60000) {
 /*
  delay(100);
  Serial.println(commsMotion);
@@ -138,10 +140,6 @@ commsMotion = 0;
   strcpy(Buffer,"I saw what you did last night.\r");
   zbtx = ZBTxRequest(Broadcast, (uint8_t *)Buffer, strlen(Buffer2));
   xbee.send(zbtx);*/
-  
-  delay(60000);
-  
-
 }
 
 //********************************eND OF lOOP**********************************
