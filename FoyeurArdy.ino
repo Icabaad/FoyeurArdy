@@ -44,6 +44,7 @@ void setup() {
 void loop() {
   unsigned long currentMillis = millis();
   if(currentMillis - previousMillis > 60000) {
+    previousMillis = currentMillis;
 /*
  delay(100);
  Serial.println(commsMotion);
@@ -112,7 +113,7 @@ void loop() {
   
   char Buffer2[80];
 
-  dtostrf(lightValue, 5, 2, Buffer);
+  dtostrf(lightValue, 6, 2, Buffer);
 strcpy(Buffer2, Buffer);
 strcat(Buffer2, ","); 
 strcat(Buffer2, dtostrf(hotTMP, 5, 2, Buffer)); 
@@ -140,6 +141,7 @@ commsMotion = 0;
   strcpy(Buffer,"I saw what you did last night.\r");
   zbtx = ZBTxRequest(Broadcast, (uint8_t *)Buffer, strlen(Buffer2));
   xbee.send(zbtx);*/
+}
 }
 
 //********************************eND OF lOOP**********************************
