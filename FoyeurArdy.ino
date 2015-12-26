@@ -113,7 +113,7 @@ void loop() {
   
   char Buffer2[80];
 
-  dtostrf(lightValue, 6, 2, Buffer);
+  dtostrf(lightValue, 7, 2, Buffer);
 strcpy(Buffer2, Buffer);
 strcat(Buffer2, ","); 
 strcat(Buffer2, dtostrf(hotTMP, 5, 2, Buffer)); 
